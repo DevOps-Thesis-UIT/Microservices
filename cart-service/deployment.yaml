@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-service
+  labels:
+    app: cart-service
+spec:
+  selector:
+    matchLabels:
+      app: cart-service
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: cart-service
+    spec:
+      # serviceAccountName: gr18
+      # imagePullSecrets:
+      #   - name: ecr-credentials
+      containers:
+        - name: cart-service
+          image: trituong/cart-service:v4 # {"$imagepolicy": "microservices:cart-service-policy"}
+          envFrom:
+          - secretRef:
+              name: mongo-secret
+          resources:
+            requests:
+              cpu: 10m
+              memory: 100Mi
+            limits:
+              cpu: "200m"
+              memory: 500Mi
+          ports:
+            - containerPort: 3003
+          command: ["/bin/sh", "-c"]
+          args: ["npm run start"]
+      restartPolicy: Always
