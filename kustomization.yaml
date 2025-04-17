@@ -3,7 +3,9 @@ kind: Kustomization
 namespace: microservices
 resources:
     - namespace.yaml
+    - mongo-secret.yaml
     - cart-service
     - front-end
     - product-service
     - user-service
+    - controlplane-monitoring
