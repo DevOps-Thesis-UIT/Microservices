@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: front-end
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: front-end
       protocol: TCP
