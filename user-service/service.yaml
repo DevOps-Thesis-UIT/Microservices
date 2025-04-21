@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: user-service
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: user-service
       protocol: TCP

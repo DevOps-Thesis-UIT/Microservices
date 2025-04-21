@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: cart-service
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: cart-service
       protocol: TCP
