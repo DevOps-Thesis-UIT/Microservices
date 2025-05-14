@@ -20,7 +20,7 @@ spec:
       #   - name: ecr-credentials
       containers:
         - name: cart-service
-          image: trituong/cart-service:v4 # {"$imagepolicy": "microservices:cart-service-policy"}
+          image: public.ecr.aws/n4s8c1b7/cart-service:7 # {"$imagepolicy": "microservices:cart-service-policy"}
           envFrom:
           - secretRef:
               name: mongo-secret

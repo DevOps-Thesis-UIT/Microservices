@@ -20,7 +20,7 @@ spec:
       #   - name: ecr-credentials
       containers:
         - name: user-service
-          image: trituong/user-service:v5 # {"$imagepolicy": "microservices:user-service-policy"}
+          image: public.ecr.aws/n4s8c1b7/user-service:3 # {"$imagepolicy": "microservices:user-service-policy"}
           envFrom:
           - secretRef:
               name: mongo-secret

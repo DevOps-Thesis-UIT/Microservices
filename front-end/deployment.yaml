@@ -20,7 +20,7 @@ spec:
       #   - name: ecr-credentials
       containers:
         - name: front-end
-          image: trituong/frontend-service:v8 # {"$imagepolicy": "microservices:front-end-policy"}
+          image: public.ecr.aws/n4s8c1b7/front-end:11 # {"$imagepolicy": "microservices:front-end-policy"}
           resources:
             requests:
               cpu: 10m
