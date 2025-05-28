@@ -5,6 +5,7 @@ metadata:
   labels:
     name: product-service
   annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/client-max-body-size: 200m
     nginx.ingress.kubernetes.io/proxy-body-size: 200m
     nginx.ingress.kubernetes.io/rewrite-target: /$1
@@ -12,12 +13,16 @@ metadata:
 
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - game-store.trituong.space
+    secretName: product-service-tls
   rules:
   - host: game-store.trituong.space
     http:
       paths:
       - path: "/product/(.*)"
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
             name: product-service

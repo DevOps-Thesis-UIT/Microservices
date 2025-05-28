@@ -4,8 +4,14 @@ metadata:
   name: front-end
   labels:
     name: front-end
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - game-store.trituong.space
+    secretName: front-end-tls
   rules:
   - host: game-store.trituong.space
     http:
