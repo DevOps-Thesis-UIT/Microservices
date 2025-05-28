@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: game-store.com
+  - host: game-store.trituong.space
     http:
       paths:
       - path: "/user/(.*)"
