@@ -22,7 +22,7 @@ spec:
     http:
       paths:
       - path: "/product/(.*)"
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: product-service
