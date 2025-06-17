@@ -1,6 +1,6 @@
 kustomize:
   images:
   - public.ecr.aws/n4s8c1b7/product-service:11
-  - public.ecr.aws/n4s8c1b7/user-service:3
+  - public.ecr.aws/n4s8c1b7/user-service:5
   - public.ecr.aws/n4s8c1b7/cart-service:9
   - public.ecr.aws/n4s8c1b7/front-end:13
